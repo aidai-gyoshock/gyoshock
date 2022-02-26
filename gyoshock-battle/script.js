@@ -287,12 +287,6 @@ const myPrimeDOM=document.getElementById('myPrime')
 const enemyPrimeDOM=document.getElementById('enemyPrime')
 const myPrime2DOM=document.getElementById('myPrime2')
 const enemyPrime2DOM=document.getElementById('enemyPrime2')
-const myWin1DOM=document.getElementById('myWin1')
-const myWin2DOM=document.getElementById('myWin2')
-const myWin3DOM=document.getElementById('myWin3')
-const enemyWin1DOM=document.getElementById('enemyWin1')
-const enemyWin2DOM=document.getElementById('enemyWin2')
-const enemyWin3DOM=document.getElementById('enemyWin3')
 
 let myWin=0
 let enemyWin=0
@@ -577,15 +571,6 @@ function battle(){
     enemyPrime2DOM.innerHTML=`負け…`
     myWin+=1
     console.log(`myWin=${myWin}`)
-    if(myWin===1){
-      myWin1DOM.style.visibility=`visible`
-    }
-    else if(myWin===2){
-      myWin2DOM.style.visibility=`visible`
-    }
-    else if(myWin===3){
-      myWin3DOM.style.visibility=`visible`
-    }
   }
   else if(finalMyPrime===finalEnemyPrime){
     myPrime2DOM.innerHTML=`引き分け`
@@ -597,15 +582,6 @@ function battle(){
     enemyPrime2DOM.innerHTML=`勝ち！`
     enemyWin+=1
     console.log(`enemyWin=${enemyWin}`)
-    if(enemyWin===1){
-      enemyWin1DOM.style.visibility=`visible`
-    }
-    else if(enemyWin===2){
-      enemyWin2DOM.style.visibility=`visible`
-    }
-    else if(enemyWin===3){
-      enemyWin3DOM.style.visibility=`visible`
-    }
   }
   if(myWin===3 || enemyWin===3){
     continueButtonDOM.textContent='結果'
