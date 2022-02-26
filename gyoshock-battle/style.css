@@ -164,24 +164,6 @@ body {
     font-size: x-large;
     border-radius: 10px;
 }
-.enemyWinsNumber{
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    transform: translate(-50%,-50%);
-    display:flex;
-    flex-flow: column;
-    color: #FFFF11;
-}
-#enemyWin1{
-    visibility:hidden;
-}
-#enemyWin2{
-    visibility:hidden;
-}
-#enemyWin3{
-    visibility:hidden;
-}
 
 #continueButton{
     width: calc(var(--answerButtonFieldWidth)/3);
