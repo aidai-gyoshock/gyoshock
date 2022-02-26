@@ -1,0 +1,43 @@
+<!DOCTYPE html5>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>さかるた</title>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="style.css?20220208">
+</head>
+<body>
+    <div id="backGround">
+        <div class="displayNone" id="loader">Loading...</div>
+        <div id="wrapper">
+            <div class="getCardField">
+                <div class="readCardField">
+                    <img id="read" src="">
+                    <div id="timer"></div>
+                </div>
+        
+                <script type="text/javascript">
+                    for (let i=10;i<54;i++){
+                        document.write(`<img class="get" id="get_${i}" src="">`);
+                    }
+                    </script>
+        
+                <div class="answerButtonField">
+                    <button class="answerButton displayNone" id="answerButton1">1</button>
+                    <button class="answerButton displayNone" id="answerButton2">2</button>
+                    <button class="answerButton displayNone" id="answerButton3">3</button>
+                </div>
+        
+                <div id="wrong">不正解0</div>
+                <div id="myCard">正解0</div>
+                <div id="timeOutCard">時間切れ0</div>
+            </div>
+        </div>
+    </div>
+    <h1 id="resultText"></h1>
+    <button class="displayNone" id="restartButton" onclick="location.href='../index.html'">最初に戻る</button>
+    <script src="script.js?20220208"></script>
+</body>
+</html>
