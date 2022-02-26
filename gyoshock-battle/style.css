@@ -135,24 +135,6 @@ body {
     font-size: x-large;
     border-radius: 10px;
 }
-.myWinsNumber{
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    transform: translate(-50%,-50%);
-    display:flex;
-    flex-flow: column;
-    color: #FFFF11;
-}
-#myWin1{
-    visibility:hidden;
-}
-#myWin2{
-    visibility:hidden;
-}
-#myWin3{
-    visibility:hidden;
-}
 
 #enemyPrime{
     background-color: white;
