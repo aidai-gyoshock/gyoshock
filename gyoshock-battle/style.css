@@ -1,0 +1,271 @@
+body {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+  }
+
+:root {
+    --cardWidth: 132px;
+    --cardHeight: 170px;
+    --cardColumnsOnMainField: 10;
+    --cardRowOnMainField: 4;
+    --gapBetweenCard: 5px;
+    --answerButtonFieldWidth: 400px;
+    --answerButtonFieldHeight: 50px;
+    --answerButtonWidth: 100px;
+    --answerButtonZIndex: 100;
+    --expansionZIndex: 1;
+    --expansionMagnification: 3;
+    --primeWidth: 200px;
+    --primeHeight: 100px
+}
+
+#backGround{
+    background-image: url(png\\background.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    top: 50%;
+    left: 50%;
+    background-repeat: no-repeat;
+}
+
+#wrapper{
+    /* background-color: aquamarine; */
+    /* 90px*10枚+5px*10間隔=950px */
+    width: calc((var(--cardWidth) * var(--cardColumnsOnMainField)) + (var(--gapBetweenCard) * (var(--cardColumnsOnMainField) - 1)));
+    /* 128px*4枚+5px*10間隔=527px */
+    height: calc((var(--cardHeight) * var(--cardRowOnMainField)) + (var(--gapBetweenCard) * (var(--cardRowOnMainField) - 1)));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#myField{
+    width: calc((var(--cardWidth) * var(--cardColumnsOnMainField)) + (var(--gapBetweenCard) * (var(--cardColumnsOnMainField) - 1)));
+    height: var(--cardHeight);
+    position: absolute;
+    top: 50%;
+    /* background-color: blue; */
+}
+
+#enemyField{
+    width: calc((var(--cardWidth) * var(--cardColumnsOnMainField)) + (var(--gapBetweenCard) * (var(--cardColumnsOnMainField) - 1)));
+    height: var(--cardHeight);
+    position: absolute;
+    top: calc(50% - var(--cardHeight));
+    /* background-color: red; */
+}
+
+.card{
+    width: var(--cardWidth);
+    height: var(--cardHeight);
+    position: absolute;
+}
+
+.eventsNone{
+    pointer-events: none;
+}
+
+.expansionCard{
+    width: calc(var(--cardWidth)*var(--expansionMagnification));
+    height: calc(var(--cardHeight)*var(--expansionMagnification));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.answerButtonField{
+    width: calc(var(--cardWidth)*var(--expansionMagnification));
+    height: var(--answerButtonFieldHeight);
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,calc(var(--cardHeight)*var(--expansionMagnification)*0.5));
+}
+.answerButton{
+    width: var(--answerButtonWidth);
+    z-index: var(--answerButtonZIndex);
+}
+.displayNone{
+    display: none;
+}
+.answerCard{
+    position: absolute;
+    transform-origin: right top;
+    transform: rotate(270deg) translateY(calc(var(--cardHeight) * -1));
+}
+
+@keyframes blink{
+    0% {opacity:0.3;}
+    100% {opacity:1;}
+}
+#myPrime{
+    background-color: white;
+    display: block;
+    width: var(--primeWidth);
+    height: calc(var(--primeHeight)/2);
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    line-height: calc(var(--primeHeight)/2);
+    font-size: x-large;
+    border-radius: 10px;
+}
+#myPrime2{
+    background-color: white;
+    display: block;
+    width: var(--primeWidth);
+    height: calc(var(--primeHeight)/2);
+    position: absolute;
+    top: 70%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    line-height: calc(var(--primeHeight)/2);
+    font-size: x-large;
+    border-radius: 10px;
+}
+.myWinsNumber{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    display:flex;
+    flex-flow: column;
+    color: #FFFF11;
+}
+#myWin1{
+    visibility:hidden;
+}
+#myWin2{
+    visibility:hidden;
+}
+#myWin3{
+    visibility:hidden;
+}
+
+#enemyPrime{
+    background-color: white;
+    display: block;
+    width: var(--primeWidth);
+    height: calc(var(--primeHeight)/2);
+    position: absolute;
+    top: 66%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    line-height: calc(var(--primeHeight)/2);
+    font-size: x-large;
+    border-radius: 10px;
+}
+#enemyPrime2{
+    background-color: white;
+    display: block;
+    width: var(--primeWidth);
+    height: calc(var(--primeHeight)/2);
+    position: absolute;
+    top: 31%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    line-height: calc(var(--primeHeight)/2);
+    font-size: x-large;
+    border-radius: 10px;
+}
+.enemyWinsNumber{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    display:flex;
+    flex-flow: column;
+    color: #FFFF11;
+}
+#enemyWin1{
+    visibility:hidden;
+}
+#enemyWin2{
+    visibility:hidden;
+}
+#enemyWin3{
+    visibility:hidden;
+}
+
+#continueButton{
+    width: calc(var(--answerButtonFieldWidth)/3);
+    height: var(--answerButtonFieldHeight);
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+    opacity: 0.6;
+}
+
+#continueButton {
+    min-width: var(--primeWidth);
+    height: calc(var(--primeHeight)/2);
+    font-size: large;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background-size: 120% auto;
+    background-image: linear-gradient(315deg, #7b4397 0%, #dc2430 75%);
+}
+#continueButton:hover {
+background-position: right center;
+}
+
+#resultText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 2px  2px 5px silver,
+            -2px  2px 5px silver,
+             2px -2px 5px silver,
+            -2px -2px 5px silver;
+}
+
+#restartButton {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 60px;
+    width: 240px;
+    font-size: 20px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background-size: 120% auto;
+    background-image: linear-gradient(315deg, #4ecdc4 0%, #c797eb 75%);
+  }
+  .restartButton:hover {
+    position: absolute;
+    background-position: right center;
+  }
