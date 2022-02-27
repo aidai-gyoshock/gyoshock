@@ -233,3 +233,21 @@ background-position: right center;
     position: absolute;
     background-position: right center;
   }
+
+.myWinStar{
+    display: flex;
+    flex-flow: column;
+    width: 40px;
+    position: absolute;
+    top: 20%;
+    left: 28%;
+}
+
+.enemyWinStar{
+    display: flex;
+    flex-flow: column;
+    width: 40px;
+    position: absolute;
+    top: 20%;
+    left: 28%;
+}

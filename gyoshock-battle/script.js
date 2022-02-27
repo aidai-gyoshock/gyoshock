@@ -287,6 +287,12 @@ const myPrimeDOM=document.getElementById('myPrime')
 const enemyPrimeDOM=document.getElementById('enemyPrime')
 const myPrime2DOM=document.getElementById('myPrime2')
 const enemyPrime2DOM=document.getElementById('enemyPrime2')
+const myWinStar1DOM=document.getElementById('myStar1')
+const myWinStar2DOM=document.getElementById('myStar2')
+const myWinStar3DOM=document.getElementById('myStar3')
+const enemyWinStar1DOM=document.getElementById('enemyStar1')
+const enemyWinStar2DOM=document.getElementById('enemyStar2')
+const enemyWinStar3DOM=document.getElementById('enemyStar3')
 
 let myWin=0
 let enemyWin=0
@@ -571,6 +577,15 @@ function battle(){
     enemyPrime2DOM.innerHTML=`負け…`
     myWin+=1
     console.log(`myWin=${myWin}`)
+    if(myWin===1){
+      myWinStar1DOM.classList.remove('displayNone')
+    }
+    else if(myWin===2){
+      myWinStar2DOM.classList.remove('displayNone')
+    }
+    else if(myWin===3){
+      myWinStar3DOM.classList.remove('displayNone')
+    }
   }
   else if(finalMyPrime===finalEnemyPrime){
     myPrime2DOM.innerHTML=`引き分け`
@@ -582,6 +597,15 @@ function battle(){
     enemyPrime2DOM.innerHTML=`勝ち！`
     enemyWin+=1
     console.log(`enemyWin=${enemyWin}`)
+    if(enemyWin===1){
+      enemyWinStar1DOM.classList.remove('displayNone')
+    }
+    else if(enemyWin===2){
+      enemyWinStar2DOM.classList.remove('displayNone')
+    }
+    else if(enemyWin===3){
+      enemyWinStar3DOM.classList.remove('displayNone')
+    }
   }
   if(myWin===3 || enemyWin===3){
     continueButtonDOM.textContent='結果'
