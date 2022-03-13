@@ -5,6 +5,18 @@
     background-repeat: no-repeat;
     min-height: 100vh;
 }
+#battleVideo{
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  transform: translate(-50%,-50%);
+}
+#karutaVideo{
+  position: absolute;
+  top: 30%;
+  left: 65%;
+  transform: translate(-50%,-50%);
+}
 #indexStartButton {
     position: absolute;
     top: 50%;
@@ -57,7 +69,7 @@
 
 .copyright{
   position: absolute;
-  top: 30%;
-  left: 30%;
+  top: 60%;
+  left: 70%;
   transform: translate(-50%,-50%);
 }
